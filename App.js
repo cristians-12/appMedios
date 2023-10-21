@@ -13,6 +13,7 @@ import { useState } from "react";
 export default function App() {
   const [text, setText] = useState("Hola");
   const [data, setData] = useState({});
+  const [foco, setFoco] = useState('apagado');
 
   const Enviar = () => {
     fetch("https://manukga.onrender.com", {
@@ -79,7 +80,7 @@ export default function App() {
         >
           <Text style={styles.textBtn1}>Enviar</Text>
         </TouchableOpacity>
-        <Button title="Borrar" />
+        <Button title="Encender foco" onPress={setFoco(Encendido)} />
       </View>
     </View>
   );
